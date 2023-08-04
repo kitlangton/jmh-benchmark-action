@@ -104,6 +104,8 @@ object Main extends ZIOAppDefault:
     val prSha     = pullRequest.head.sha
     val prRepoUrl = GitHub.context.payload.repository.get.html_url.get
     val prBranch  = pullRequest.head.ref
+    val repo      = GitHub.context.repo
+    println(s"prSha: $prSha prRepoUrl: $prRepoUrl prBranch: $prBranch repo: ${scalajs.js.JSON.stringify(repo)}}")
     Git.remoteAdd("pr_repo", prRepoUrl)
     Git.fetch("pr_repo", prBranch)
     Git.checkout(prBranch, s"pr_repo/$prBranch")
