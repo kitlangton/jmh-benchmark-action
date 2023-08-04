@@ -6,6 +6,9 @@ import jmh.BenchmarkRun
 import zio.*
 import zio.json.{DecoderOps, EncoderOps}
 
+import scala.scalajs.js.JSON
+import scala.scalajs.js.JSON.stringify
+
 object Main extends ZIOAppDefault:
 
   private val benchmarkDataBranch: String    = "internal/benchmark-data"
@@ -84,6 +87,7 @@ object Main extends ZIOAppDefault:
     for
       repository <-
         ZIO.fromOption(GitHub.context.payload.repository.toOption).orElseFail(new Exception("missing repository"))
+      _      <- ZIO.debug(s"comment on pull request (${pullRequestNumber})\nfor repository: ${stringify(repository)}")
       octokit = GitHub.getOctokit(config.githubToken)
       _ <- ZIO.fromFuture { _ =>
              val commitMarkdownLink = s"[`$commitMessage`]($commitLink)"
@@ -102,15 +106,18 @@ object Main extends ZIOAppDefault:
 
   private def getPRCommitMessageAndLink(pullRequest: PullRequest): (String, String) =
     val prSha     = pullRequest.head.sha
-    val prRepoUrl = GitHub.context.payload.pull_request.get.head.repo.html_url
+    val prRepoUrl = pullRequest.head.repo.html_url
     val prBranch  = pullRequest.head.ref
-    val repo      = GitHub.context.repo
-    println(s"prSha: $prSha prRepoUrl: $prRepoUrl prBranch: $prBranch repo: ${scalajs.js.JSON.stringify(repo)}}")
+    println(s"prSha: $prSha prRepoUrl: $prRepoUrl prBranch: $prBranch")
     Git.remoteAdd("pr_repo", prRepoUrl)
+    println(s"remote added ${Git.remote()}")
     Git.fetch("pr_repo", prBranch)
+    println(s"fetched ${Git.remote()}")
     Git.checkout(prBranch, s"pr_repo/$prBranch")
     val message = Git.getCommitMessage(prSha)
-    val link    = s"$prRepoUrl/pull/${pullRequest.number}/commits/$prSha"
+    println(s"message: $message")
+    val link = s"${pullRequest.html_url}/pull/${pullRequest.number}/commits/$prSha"
+    println(s"link: $link")
     (message, link)
 
   private def updateBenchmarks(savedBenchmarks: SavedBenchmarks, benchmark: Benchmark, config: AppConfig) =
