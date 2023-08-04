@@ -7,6 +7,8 @@ warning based on the `failOnRegression` configuration.
 If the GitHub event is a pull request, it adds a comment to the PR showing the benchmark comparison. If it's a push
 event, it updates the saved benchmark data with the new data (stored in a separate `internal/benchmark-data` branch).
 
+### Example Automated Pull Request Comment
+
 ![CleanShot 2023-08-04 at 12 08 55@2x](https://github.com/kitlangton/jmh-benchmark-action/assets/7587245/1e06415a-2966-4c06-b4f5-9d40bea0b271)
 
 ## Usage
