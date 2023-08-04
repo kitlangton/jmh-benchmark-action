@@ -15,6 +15,9 @@ object Git:
   def checkout(branch: String): Unit =
     Process.run(s"git checkout $branch || git checkout -b $branch")
 
+  def resetHard(): Unit =
+    Process.run(s"git reset --hard")
+
   def checkout(branch: String, repo: String): Unit =
     Process.run(s"git checkout -b $branch $repo")
 
