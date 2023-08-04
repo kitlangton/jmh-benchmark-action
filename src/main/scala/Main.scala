@@ -1,5 +1,5 @@
 import actions.*
-import actions.wrappers.{CreateCommentParams, GitHub, PullRequest}
+import actions.wrappers.{CreateCommentParams, GetCommitParams, GitHub, PullRequest}
 import fs.Files
 import git.Git
 import jmh.BenchmarkRun
@@ -37,8 +37,7 @@ object Main extends ZIOAppDefault:
 
       // When the event is a pull request, we want to comment on the PR with the benchmark comparison.
       _ <- ZIO.foreach(GitHub.context.payload.pull_request.toOption) { pullRequest =>
-             val (message, link) = getPRCommitMessageAndLink(pullRequest)
-             commentOnPullRequest(comparison, config, pullRequest.number, message, link)
+             commentOnPullRequest(comparison, config, pullRequest)
            }
 
       // When the event is a push, indicating a PR has been merged, we want to update the saved benchmark data
@@ -79,44 +78,38 @@ object Main extends ZIOAppDefault:
   private def commentOnPullRequest(
       comparison: BenchmarkComparison,
       config: AppConfig,
-      pullRequestNumber: Int,
-      commitMessage: String,
-      commitLink: String
+      pullRequest: PullRequest
   ) =
     for
-      _      <- ZIO.debug(s"comment on pull request ($pullRequestNumber)")
-      _      <- ZIO.debug(s"Repo owner: ${GitHub.context.repo.owner} Repo: ${GitHub.context.repo.repo}")
-      octokit = GitHub.getOctokit(config.githubToken)
+      octokit <- ZIO.succeed(GitHub.getOctokit(config.githubToken))
+      commitMessage <- ZIO
+                         .fromFuture(_ =>
+                           octokit.rest.repos
+                             .getCommit(
+                               GetCommitParams(
+                                 owner = pullRequest.head.repo.owner.login,
+                                 repo = pullRequest.head.repo.name,
+                                 ref = pullRequest.head.sha
+                               )
+                             )
+                             .toFuture
+                         )
+                         .map(_.commit.message)
+      link = s"${pullRequest.html_url}/pull/${pullRequest.number}/commits/${pullRequest.head.sha}"
       _ <- ZIO.fromFuture { _ =>
-             val commitMarkdownLink = s"[`$commitMessage`]($commitLink)"
+             val commitMarkdownLink = s"[`${commitMessage.replace("\n", " ")}`]($link)"
              octokit.rest.issues
                .createComment(
                  CreateCommentParams(
                    owner = GitHub.context.repo.owner,
                    repo = GitHub.context.repo.repo,
-                   issue_number = pullRequestNumber,
+                   issue_number = pullRequest.number,
                    body = s"🤖 **Benchmark Comparison** for $commitMarkdownLink\n\n" + comparison.toMarkdownTable
                  )
                )
                .toFuture
            }
     yield ()
-
-  private def getPRCommitMessageAndLink(pullRequest: PullRequest): (String, String) =
-    val prSha     = pullRequest.head.sha
-    val prRepoUrl = pullRequest.head.repo.html_url
-    val prBranch  = pullRequest.head.ref
-    println(s"prSha: $prSha prRepoUrl: $prRepoUrl prBranch: $prBranch")
-    Git.remoteAdd("pr_repo", prRepoUrl)
-    println(s"remote added ${Git.remote()}")
-    Git.fetch("pr_repo", prBranch)
-    println(s"fetched ${Git.remote()}")
-    Git.checkout(prBranch, s"pr_repo/$prBranch")
-    val message = Git.getCommitMessage(prSha)
-    println(s"message: $message")
-    val link = s"${pullRequest.html_url}/pull/${pullRequest.number}/commits/$prSha"
-    println(s"link: $link")
-    (message, link)
 
   private def updateBenchmarks(savedBenchmarks: SavedBenchmarks, benchmark: Benchmark, config: AppConfig) =
     for
