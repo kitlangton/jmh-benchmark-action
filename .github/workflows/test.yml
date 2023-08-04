@@ -1,0 +1,27 @@
+name: 'build-test'
+on: # rebuild any PRs and main branch changes
+  pull_request:
+  push:
+    branches:
+      - main
+      - 'releases/*'
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Debug env vars and inputs
+        run: |
+          echo "----- ENVIRONMENT VARIABLES -----"
+          env
+          echo "----- INPUTS -----"
+          echo ${{ toJson(inputs) }}
+      - uses: ./
+        id: my_action
+        with:
+          jmh-output-path: src/test/resources/benchmarks.json
+          github-token: ${{ secrets.GITHUB_TOKEN }}

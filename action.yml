@@ -1,0 +1,21 @@
+name: 'zio-benchmarks-action'
+description: 'A GitHub Action to run JMH Benchmarks and post the results to a PR'
+author: 'Kit Langton'
+inputs:
+  jmh-output-path:
+    required: true
+    description: 'Path to the JMH output file'
+  github-token:
+    required: true
+    description: 'GitHub token for the repository'
+  failue-threshold:
+    required: false
+    description: 'Threshold for failure (-0.05 = 5% slower than baseline)'
+    default: '-0.05'
+  fail-on-regression:
+    required: false
+    description: 'Fail the build if there is a regression'
+    default: 'false'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
