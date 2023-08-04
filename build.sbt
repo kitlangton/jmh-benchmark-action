@@ -7,7 +7,7 @@ val scalaJavaTimeVersion = "2.5.0"
 lazy val root = project
   .in(file("."))
   .settings(
-    name                            := "scala-action",
+    name                            := "jmh-benchmark-action",
     version                         := "0.1.0",
     scalaVersion                    := "3.3.0",
     scalaJSUseMainModuleInitializer := true,

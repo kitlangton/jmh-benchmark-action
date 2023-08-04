@@ -28,7 +28,10 @@ object Main extends ZIOAppDefault:
     for
       config           <- AppConfig.parse
       currentBenchmark <- readJmhBenchmark(config)
+      _                <- ZIO.debug("READ BENCHMARK")
+      _                <- ZIO.attempt(Git.addAll())
       _                <- ZIO.attempt(Git.resetHard())
+      _                <- ZIO.debug("ABOUT TO RESET")
       _                <- checkoutBenchmarkDataBranch
       savedBenchmarks  <- readSavedBenchmarks
       comparison        = currentBenchmark.compare(savedBenchmarks.mostRecent)
