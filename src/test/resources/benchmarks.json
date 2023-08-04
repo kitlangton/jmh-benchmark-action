@@ -23,7 +23,7 @@
     "measurementTime": "10 s",
     "measurementBatchSize": 1,
     "primaryMetric": {
-      "score": 100.3355,
+      "score": 150.3355,
       "scoreError": "NaN",
       "scoreConfidence": [
         "NaN",
@@ -75,7 +75,7 @@
     "measurementTime": "10 s",
     "measurementBatchSize": 1,
     "primaryMetric": {
-      "score": 1.6652949420226753E7,
+      "score": 120.5132,
       "scoreError": "NaN",
       "scoreConfidence": [
         "NaN",
