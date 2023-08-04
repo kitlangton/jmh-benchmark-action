@@ -11,6 +11,8 @@ event, it updates the saved benchmark data with the new data (stored in a separa
 
 ![CleanShot 2023-08-04 at 12 08 55@2x](https://github.com/kitlangton/jmh-benchmark-action/assets/7587245/1e06415a-2966-4c06-b4f5-9d40bea0b271)
 
+Taken from this [Example Project](https://github.com/kitlangton/jmh-benchmark-action-example-project).
+
 ## Usage
 
 To use the JMH Benchmarking Action, you need to include it in your GitHub workflow. An example workflow configuration
