@@ -1,0 +1,9 @@
+{
+  "repository": {
+    "full_name": "sample-repo-full-name",
+    "html_url": "cool.github.com",
+    "owner": {
+      "login": "sample-owner-login"
+    }
+  }
+}
