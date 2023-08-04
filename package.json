@@ -1,21 +1,21 @@
 {
-  "name": "scala-js-action",
+  "name": "jmh-benchmark-action",
   "type": "module",
-  "version": "0.0.0",
-  "private": true,
-  "description": "Scala.js template action",
+  "version": "0.1.1",
+  "private": false,
+  "description": "JMH Benchmark Action",
   "main": "lib/main.js",
   "scripts": {
     "package": "ncc build --source-map --license licenses.txt"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/kitlangton/jmh-benchmark-action.git"
   },
   "keywords": [
-    "actions",
-    "node",
-    "setup"
+    "jmh",
+    "scala",
+    "benchmark"
   ],
   "author": "",
   "license": "MIT",
