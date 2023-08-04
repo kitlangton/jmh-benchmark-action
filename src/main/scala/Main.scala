@@ -27,6 +27,7 @@ object Main extends ZIOAppDefault:
   private val program =
     for
       config           <- AppConfig.parse
+      _                <- ZIO.debug(s"Parsed Config: $config")
       currentBenchmark <- readJmhBenchmark(config)
       _                <- ZIO.debug("READ BENCHMARK")
       _                <- ZIO.attempt(Git.addAll())
