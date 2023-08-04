@@ -63,7 +63,7 @@ You can configure the action by providing additional parameters. The available p
 
 - `jmh-output-path`: The file path where your JMH benchmark results are written (e.g., `benchmarks/output.json`).
 - `github-token`: Your GitHub token, (e.g., `${{ secrets.GITHUB_TOKEN }}`).
-- `failOnRegression`: (Optional) A boolean that indicates whether the action should fail when it detects regressions
+- `fail-on-regression`: (Optional) A boolean that indicates whether the action should fail when it detects regressions
   beyond a certain threshold (defaults to false).
-- `failureThreshold`: (Optional) The change beyond which a performance decrease is considered a regression (defaults to
+- `failure-threshold`: (Optional) The change beyond which a performance decrease is considered a regression (defaults to
   -0.05).
