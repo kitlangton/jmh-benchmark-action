@@ -1,0 +1,1810 @@
+[
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.benchmarks.CookieDecodeBenchmark.benchmarkNettyCookie",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 1424564.183255032,
+      "scoreError" : 33487.46238870178,
+      "scoreConfidence" : [
+        1391076.7208663302,
+        1458051.6456437337
+      ],
+      "scorePercentiles" : {
+        "0.0" : 1352244.0882642702,
+        "50.0" : 1418763.3748186096,
+        "90.0" : 1492818.3839075528,
+        "95.0" : 1499664.0006931864,
+        "99.0" : 1501849.2200343779,
+        "99.9" : 1501849.2200343779,
+        "99.99" : 1501849.2200343779,
+        "99.999" : 1501849.2200343779,
+        "99.9999" : 1501849.2200343779,
+        "100.0" : 1501849.2200343779
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          1501849.2200343779,
+          1494565.1555637398,
+          1491653.8694700948,
+          1468445.518017468,
+          1479574.0326197713
+        ],
+        [
+          1388816.8244459962,
+          1461184.5782015806,
+          1463227.3398488443,
+          1455163.7134967174,
+          1455803.9561426237
+        ],
+        [
+          1402871.9815889052,
+          1379102.7373399741,
+          1371363.8113632866,
+          1379438.997238859,
+          1352244.0882642702
+        ],
+        [
+          1408613.1728374555,
+          1413033.4772828396,
+          1439220.4377737057,
+          1435084.4711164623,
+          1384335.0284479184
+        ],
+        [
+          1405342.765801104,
+          1355667.1381423187,
+          1422832.5336581937,
+          1385906.3578606814,
+          1418763.3748186096
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.benchmarks.HttpCollectEval.benchmarkApp",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 786.7729061143359,
+      "scoreError" : 67.46820899567635,
+      "scoreConfidence" : [
+        719.3046971186595,
+        854.2411151100123
+      ],
+      "scorePercentiles" : {
+        "0.0" : 675.2269629951845,
+        "50.0" : 751.906284280493,
+        "90.0" : 954.6019213374359,
+        "95.0" : 976.4780488044418,
+        "99.0" : 981.890515083628,
+        "99.9" : 981.890515083628,
+        "99.99" : 981.890515083628,
+        "99.999" : 981.890515083628,
+        "99.9999" : 981.890515083628,
+        "100.0" : 981.890515083628
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          730.4061306874648,
+          728.1261416805203,
+          698.9543204457611,
+          719.9684647853512,
+          675.2269629951845
+        ],
+        [
+          963.848960819674,
+          981.890515083628,
+          936.4634636270032,
+          908.2792253847772,
+          948.4372283492772
+        ],
+        [
+          705.7386769601803,
+          751.906284280493,
+          737.3252447004404,
+          702.6362389607486,
+          753.6211845334399
+        ],
+        [
+          808.4310210203984,
+          813.7267914984972,
+          813.8398431551218,
+          803.1489477616498,
+          763.7285206462421
+        ],
+        [
+          727.0909485001438,
+          749.8591982634688,
+          748.5286056625184,
+          735.576095296167,
+          762.5636377602448
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.benchmarks.HttpCollectEval.benchmarkBase",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 160042.62653727448,
+      "scoreError" : 3382.726553555304,
+      "scoreConfidence" : [
+        156659.89998371917,
+        163425.3530908298
+      ],
+      "scorePercentiles" : {
+        "0.0" : 152985.0101191655,
+        "50.0" : 159976.71758125385,
+        "90.0" : 165750.83273740797,
+        "95.0" : 166103.56803604992,
+        "99.0" : 166107.16244067161,
+        "99.9" : 166107.16244067161,
+        "99.99" : 166107.16244067161,
+        "99.999" : 166107.16244067161,
+        "99.9999" : 166107.16244067161,
+        "100.0" : 166107.16244067161
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          159976.71758125385,
+          155456.6081014413,
+          158314.90846418947,
+          164024.25933182883,
+          163271.69796363442
+        ],
+        [
+          153076.89779256386,
+          163804.39509504268,
+          154534.69550847952,
+          156247.57475329435,
+          160895.2494585365
+        ],
+        [
+          159525.41128001089,
+          157513.23792866152,
+          152985.0101191655,
+          156546.72080295417,
+          156315.13494632483
+        ],
+        [
+          165060.49004498473,
+          164706.0824349476,
+          165521.26716772487,
+          165100.7132168671,
+          155333.85086659848
+        ],
+        [
+          166095.18109193264,
+          162297.8962610009,
+          154502.74247044866,
+          166107.16244067161,
+          163851.7583093034
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.benchmarks.HttpCollectEval.benchmarkBaseTotal",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 164075.43811520922,
+      "scoreError" : 1377.5176306610144,
+      "scoreConfidence" : [
+        162697.9204845482,
+        165452.95574587025
+      ],
+      "scorePercentiles" : {
+        "0.0" : 159127.09492842652,
+        "50.0" : 164358.06099151084,
+        "90.0" : 166353.28195110193,
+        "95.0" : 166962.6279073057,
+        "99.0" : 166966.30466716608,
+        "99.9" : 166966.30466716608,
+        "99.99" : 166966.30466716608,
+        "99.999" : 166966.30466716608,
+        "99.9999" : 166966.30466716608,
+        "100.0" : 166966.30466716608
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          162307.40731917619,
+          159127.09492842652,
+          163438.8141386734,
+          163346.68374621405,
+          162508.75422184623
+        ],
+        [
+          162858.2963698863,
+          162860.027404233,
+          164306.2624128163,
+          164961.17555282236,
+          164680.88807068058
+        ],
+        [
+          165329.41295919483,
+          164757.9791514729,
+          164178.65396578296,
+          164246.733210759,
+          159788.0102575388
+        ],
+        [
+          166966.30466716608,
+          166954.04880096475,
+          165952.77071786005,
+          164358.06099151084,
+          163930.97045782558
+        ],
+        [
+          164540.70522044928,
+          164860.2871304882,
+          164913.62195236393,
+          165830.4375501471,
+          164882.55168193052
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.benchmarks.HttpCollectEval.benchmarkHttp",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 652.2245622785699,
+      "scoreError" : 31.504901583885424,
+      "scoreConfidence" : [
+        620.7196606946845,
+        683.7294638624553
+      ],
+      "scorePercentiles" : {
+        "0.0" : 550.5176746510526,
+        "50.0" : 664.0718562453375,
+        "90.0" : 695.8810060944635,
+        "95.0" : 696.2988891987791,
+        "99.0" : 696.4273092183432,
+        "99.9" : 696.4273092183432,
+        "99.99" : 696.4273092183432,
+        "99.999" : 696.4273092183432,
+        "99.9999" : 696.4273092183432,
+        "100.0" : 696.4273092183432
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          577.134923247184,
+          581.9264420536333,
+          591.6705548485137,
+          604.9879637914554,
+          606.9557240751733
+        ],
+        [
+          689.1508275145176,
+          695.9992424864628,
+          694.4320198110222,
+          695.8021818331307,
+          696.4273092183432
+        ],
+        [
+          681.6944850780078,
+          683.5485398613763,
+          669.7439915089778,
+          663.5187991001811,
+          550.5176746510526
+        ],
+        [
+          671.6058912244922,
+          655.5612805452354,
+          675.4895265249928,
+          664.0718562453375,
+          636.2928190155302
+        ],
+        [
+          654.1787097721071,
+          655.7115936843815,
+          660.6170347581473,
+          674.9700345198532,
+          673.6046315951425
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.benchmarks.HttpCombineEval.empty",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 2578367.926867975,
+      "scoreError" : 448140.85723787313,
+      "scoreConfidence" : [
+        2130227.069630102,
+        3026508.784105848
+      ],
+      "scorePercentiles" : {
+        "0.0" : 1416815.092382111,
+        "50.0" : 2557310.9521650886,
+        "90.0" : 3746015.7266460164,
+        "95.0" : 4030381.941470423,
+        "99.0" : 4118967.093149959,
+        "99.9" : 4118967.093149959,
+        "99.99" : 4118967.093149959,
+        "99.999" : 4118967.093149959,
+        "99.9999" : 4118967.093149959,
+        "100.0" : 4118967.093149959
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          3823683.254218172,
+          2661470.8546913136,
+          1990466.6856138713,
+          2373480.1266677496,
+          2689927.8184074936
+        ],
+        [
+          2747221.895611644,
+          2271008.943517332,
+          2160189.3639776483,
+          2504599.8494298356,
+          2174782.603757862
+        ],
+        [
+          2689965.753373633,
+          2568826.4797251467,
+          2401847.9887863966,
+          2557310.9521650886,
+          2180981.1804169468
+        ],
+        [
+          2487117.263215594,
+          2869184.0972594814,
+          2792197.0378545965,
+          2598017.6370938155,
+          2768646.7169726556
+        ],
+        [
+          2123231.362960963,
+          1416815.092382111,
+          3694237.3749312465,
+          1795020.7455188194,
+          4118967.093149959
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.benchmarks.HttpCombineEval.ok",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 2592368.146004279,
+      "scoreError" : 245433.66301234448,
+      "scoreConfidence" : [
+        2346934.4829919348,
+        2837801.8090166235
+      ],
+      "scorePercentiles" : {
+        "0.0" : 2116226.1454277337,
+        "50.0" : 2547534.6701024016,
+        "90.0" : 3182563.81379241,
+        "95.0" : 3195773.355007023,
+        "99.0" : 3200870.967013384,
+        "99.9" : 3200870.967013384,
+        "99.99" : 3200870.967013384,
+        "99.999" : 3200870.967013384,
+        "99.9999" : 3200870.967013384,
+        "100.0" : 3200870.967013384
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          3200870.967013384,
+          3181687.0716592297,
+          2884095.4159224653,
+          2994233.9681223244,
+          3183878.9269921803
+        ],
+        [
+          2438879.6845200877,
+          2652429.7117673648,
+          2285229.521191996,
+          2352658.9890635004,
+          2474817.6722654556
+        ],
+        [
+          2603493.2866409756,
+          2480255.863794218,
+          2412614.2973979125,
+          2547534.6701024016,
+          2383486.824384235
+        ],
+        [
+          2835838.234650154,
+          2783731.805583002,
+          2731668.8814251544,
+          2667234.8713990175,
+          2746417.0438361918
+        ],
+        [
+          2362259.382900165,
+          2201281.950381049,
+          2143925.458784296,
+          2116226.1454277337,
+          2144453.004882483
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.benchmarks.HttpNestedFlatMapEval.benchmarkHttpFlatMap",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 154132.3051622927,
+      "scoreError" : 3531.5152997684113,
+      "scoreConfidence" : [
+        150600.78986252428,
+        157663.82046206112
+      ],
+      "scorePercentiles" : {
+        "0.0" : 145453.99217649346,
+        "50.0" : 152924.31658405036,
+        "90.0" : 161005.42509932135,
+        "95.0" : 163613.54749677115,
+        "99.0" : 164688.6643640023,
+        "99.9" : 164688.6643640023,
+        "99.99" : 164688.6643640023,
+        "99.999" : 164688.6643640023,
+        "99.9999" : 164688.6643640023,
+        "100.0" : 164688.6643640023
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          145453.99217649346,
+          152924.31658405036,
+          158621.8798722897,
+          152126.10889904498,
+          155543.58035089157
+        ],
+        [
+          155612.5611269015,
+          158167.6269499039,
+          156306.4106691939,
+          155773.53492900325,
+          155225.55548449405
+        ],
+        [
+          160939.0808500477,
+          155009.5206182819,
+          161104.94147323185,
+          160704.8244658149,
+          164688.6643640023
+        ],
+        [
+          148662.59617558256,
+          150406.3209265282,
+          148346.68716223852,
+          152402.9200023343,
+          151143.27228922024
+        ],
+        [
+          150248.04036258574,
+          148542.99017020816,
+          150980.1388292735,
+          152207.11173851343,
+          152164.9525871875
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.benchmarks.HttpRouteTextPerf.benchmarkHttpProgram",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 66746.05951280062,
+      "scoreError" : 2229.863255023997,
+      "scoreConfidence" : [
+        64516.196257776624,
+        68975.92276782462
+      ],
+      "scorePercentiles" : {
+        "0.0" : 56615.42936562815,
+        "50.0" : 67823.15283287106,
+        "90.0" : 69169.51421416091,
+        "95.0" : 69632.42762475424,
+        "99.0" : 69798.3559213739,
+        "99.9" : 69798.3559213739,
+        "99.99" : 69798.3559213739,
+        "99.999" : 69798.3559213739,
+        "99.9999" : 69798.3559213739,
+        "100.0" : 69798.3559213739
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          64655.16535887538,
+          56615.42936562815,
+          68147.21281195717,
+          68277.6208973144,
+          68069.47565375014
+        ],
+        [
+          69245.26159930836,
+          69119.01595739595,
+          68098.90328132357,
+          66618.53222495854,
+          66342.18816277968
+        ],
+        [
+          67604.09764893429,
+          66753.3941348827,
+          68831.36278891064,
+          67972.55922312876,
+          68688.19586897179
+        ],
+        [
+          69798.3559213739,
+          67367.07151322663,
+          67595.25607242502,
+          69005.06452916285,
+          63674.576915181184
+        ],
+        [
+          64393.56650294627,
+          61038.21635040013,
+          68800.29192856658,
+          67823.15283287106,
+          64117.520275742565
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.benchmarks.HttpRouteTextPerf.benchmarkUIOProgram",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 73154.60002201675,
+      "scoreError" : 6602.5027561263,
+      "scoreConfidence" : [
+        66552.09726589045,
+        79757.10277814305
+      ],
+      "scorePercentiles" : {
+        "0.0" : 56301.532333189076,
+        "50.0" : 71848.90618202464,
+        "90.0" : 88249.70876701985,
+        "95.0" : 88882.12845787381,
+        "99.0" : 89022.04829797156,
+        "99.9" : 89022.04829797156,
+        "99.99" : 89022.04829797156,
+        "99.999" : 89022.04829797156,
+        "99.9999" : 89022.04829797156,
+        "100.0" : 89022.04829797156
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          68326.63865876751,
+          67342.25267739543,
+          67879.65950072394,
+          69969.93014098059,
+          65510.49398906571
+        ],
+        [
+          74022.81298099819,
+          75021.80012072703,
+          71848.90618202464,
+          72329.56575042136,
+          67297.99690302949
+        ],
+        [
+          87845.852479937,
+          87535.14046939947,
+          88045.74872438038,
+          89022.04829797156,
+          88555.64883097907
+        ],
+        [
+          73401.09496539738,
+          70755.99588803644,
+          73901.52579242682,
+          77075.09327868138,
+          73802.5858977854
+        ],
+        [
+          56301.532333189076,
+          63415.53961817793,
+          66761.39531249012,
+          64881.51482061706,
+          68014.22693681532
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.benchmarks.ProbeContentTypeBenchmark.benchmarkApp",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 5.951132076489182E7,
+      "scoreError" : 2009068.375342938,
+      "scoreConfidence" : [
+        5.750225238954888E7,
+        6.152038914023475E7
+      ],
+      "scorePercentiles" : {
+        "0.0" : 4.963774472025351E7,
+        "50.0" : 6.0756077309220396E7,
+        "90.0" : 6.1361932035927504E7,
+        "95.0" : 6.198209306401959E7,
+        "99.0" : 6.2167682232637905E7,
+        "99.9" : 6.2167682232637905E7,
+        "99.99" : 6.2167682232637905E7,
+        "99.999" : 6.2167682232637905E7,
+        "99.9999" : 6.2167682232637905E7,
+        "100.0" : 6.2167682232637905E7
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          6.1223223262168676E7,
+          6.093227135799375E7,
+          6.0884580033163965E7,
+          6.11809333407507E7,
+          6.154905167057687E7
+        ],
+        [
+          6.2167682232637905E7,
+          6.0757252737293325E7,
+          6.1057690142442174E7,
+          6.076795384249729E7,
+          6.121129130999128E7
+        ],
+        [
+          5.48469553287233E7,
+          5.921917521907254E7,
+          5.7935298905012995E7,
+          6.015947605082816E7,
+          5.76334146750792E7
+        ],
+        [
+          6.045946790769644E7,
+          6.045680159741134E7,
+          6.0756077309220396E7,
+          6.123718561282793E7,
+          6.093553494531262E7
+        ],
+        [
+          5.870783954754017E7,
+          5.7518836635538764E7,
+          5.737680856839951E7,
+          5.9170472169862404E7,
+          4.963774472025351E7
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.benchmarks.SchemeDecodeBenchmark.benchmarkSchemeDecode",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 3345.492616467172,
+      "scoreError" : 78.31690043649182,
+      "scoreConfidence" : [
+        3267.17571603068,
+        3423.8095169036637
+      ],
+      "scorePercentiles" : {
+        "0.0" : 3007.9596619976755,
+        "50.0" : 3363.9062409824774,
+        "90.0" : 3468.617639686778,
+        "95.0" : 3486.4184758172855,
+        "99.0" : 3488.3928620225674,
+        "99.9" : 3488.3928620225674,
+        "99.99" : 3488.3928620225674,
+        "99.999" : 3488.3928620225674,
+        "99.9999" : 3488.3928620225674,
+        "100.0" : 3488.3928620225674
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          3302.084776377918,
+          3283.7472260961,
+          3267.053297363736,
+          3205.315402218176,
+          3218.41529187755
+        ],
+        [
+          3329.3408838921114,
+          3368.5434643359677,
+          3309.6411457251666,
+          3363.0662485305957,
+          3257.8319464358515
+        ],
+        [
+          3307.7522586512496,
+          3007.9596619976755,
+          3358.210014093452,
+          3364.7370404470257,
+          3363.9062409824774
+        ],
+        [
+          3391.0336904796377,
+          3389.3602305100912,
+          3413.448912726183,
+          3416.44279454302,
+          3430.4759502915945
+        ],
+        [
+          3481.811574671628,
+          3459.8216830302117,
+          3488.3928620225674,
+          3455.441966999962,
+          3403.4808473793737
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.http.benchmarks.EndpointBenchmark.benchmarkBroadTapirHttp4s",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 111.52815266497832,
+      "scoreError" : 9.550379045554303,
+      "scoreConfidence" : [
+        101.97777361942401,
+        121.07853171053263
+      ],
+      "scorePercentiles" : {
+        "0.0" : 84.13302485390224,
+        "50.0" : 112.66748040206213,
+        "90.0" : 131.43950403801918,
+        "95.0" : 133.40143470664543,
+        "99.0" : 133.7673262203019,
+        "99.9" : 133.7673262203019,
+        "99.99" : 133.7673262203019,
+        "99.999" : 133.7673262203019,
+        "99.9999" : 133.7673262203019,
+        "100.0" : 133.7673262203019
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          112.11973675435387,
+          106.69779729554628,
+          92.36071360387467,
+          102.00533606957163,
+          97.88067387204279
+        ],
+        [
+          104.07321155534565,
+          100.44295132653642,
+          104.40473340152656,
+          105.96635126467662,
+          84.13302485390224
+        ],
+        [
+          120.3966023985683,
+          123.50064527463462,
+          112.66748040206213,
+          116.73656097514507,
+          119.57348607413164
+        ],
+        [
+          133.7673262203019,
+          130.70071483573398,
+          132.547687841447,
+          122.28466346104811,
+          117.6321042198456
+        ],
+        [
+          102.74487907793967,
+          94.68390333876002,
+          116.16879029028756,
+          117.14941731830983,
+          117.56502489886569
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.http.benchmarks.EndpointBenchmark.benchmarkBroadZioApi",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 1442.5075704833084,
+      "scoreError" : 90.47918614668734,
+      "scoreConfidence" : [
+        1352.028384336621,
+        1532.9867566299959
+      ],
+      "scorePercentiles" : {
+        "0.0" : 1215.2793356546285,
+        "50.0" : 1405.2004966594868,
+        "90.0" : 1602.9662335150508,
+        "95.0" : 1610.0813019190084,
+        "99.0" : 1612.6298844943472,
+        "99.9" : 1612.6298844943472,
+        "99.99" : 1612.6298844943472,
+        "99.999" : 1612.6298844943472,
+        "99.9999" : 1612.6298844943472,
+        "100.0" : 1612.6298844943472
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          1328.5958336153717,
+          1219.884410925953,
+          1385.6050626877432,
+          1368.0459123375374,
+          1359.3992111629746
+        ],
+        [
+          1331.7561314505242,
+          1372.1686466030744,
+          1370.5221461076296,
+          1371.8809106185743,
+          1371.5129656796598
+        ],
+        [
+          1215.2793356546285,
+          1406.6659013946905,
+          1405.2004966594868,
+          1403.1031797014673,
+          1415.0327431297621
+        ],
+        [
+          1492.881510520833,
+          1576.2747963588245,
+          1587.4205487741274,
+          1575.703207747689,
+          1559.4622730759527
+        ],
+        [
+          1571.0107913878123,
+          1604.134609243218,
+          1612.6298844943472,
+          1602.1873163629396,
+          1556.3314363878883
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.http.benchmarks.EndpointBenchmark.benchmarkBroadZioCollect",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 3190.1913740893647,
+      "scoreError" : 55.15729250572191,
+      "scoreConfidence" : [
+        3135.0340815836425,
+        3245.348666595087
+      ],
+      "scorePercentiles" : {
+        "0.0" : 3135.3431456109943,
+        "50.0" : 3149.614525768648,
+        "90.0" : 3314.3466196756685,
+        "95.0" : 3382.7415657508795,
+        "99.0" : 3404.1027451802574,
+        "99.9" : 3404.1027451802574,
+        "99.99" : 3404.1027451802574,
+        "99.999" : 3404.1027451802574,
+        "99.9999" : 3404.1027451802574,
+        "100.0" : 3404.1027451802574
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          3228.974045910128,
+          3199.922349884027,
+          3191.044453532797,
+          3186.6794653234506,
+          3188.921875763119
+        ],
+        [
+          3404.1027451802574,
+          3332.8988137489973,
+          3301.9784902934493,
+          3296.1519518287555,
+          3266.8251418756513
+        ],
+        [
+          3149.6385100854372,
+          3149.614525768648,
+          3147.8834365905254,
+          3149.3987340918356,
+          3149.8485771631895
+        ],
+        [
+          3147.6731368011115,
+          3148.417140851757,
+          3146.4218410027743,
+          3138.813645978119,
+          3148.529061365992
+        ],
+        [
+          3136.029360121338,
+          3135.869982325182,
+          3135.7667009569814,
+          3135.3431456109943,
+          3138.0372201795853
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.http.benchmarks.EndpointBenchmark.benchmarkDeepPathTapirHttp4s",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 63.450650233081376,
+      "scoreError" : 2.0255037899389285,
+      "scoreConfidence" : [
+        61.425146443142445,
+        65.4761540230203
+      ],
+      "scorePercentiles" : {
+        "0.0" : 56.61517324813859,
+        "50.0" : 63.57491651668834,
+        "90.0" : 67.1950660986117,
+        "95.0" : 67.21720995502473,
+        "99.0" : 67.22448980947864,
+        "99.9" : 67.22448980947864,
+        "99.99" : 67.22448980947864,
+        "99.999" : 67.22448980947864,
+        "99.9999" : 67.22448980947864,
+        "100.0" : 67.22448980947864
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          60.926216067609026,
+          60.934671177347376,
+          60.88566523119213,
+          60.85501698164045,
+          60.89157089120323
+        ],
+        [
+          61.94476230683194,
+          62.07182766441498,
+          62.03752020190907,
+          62.04286653585883,
+          62.133260850229554
+        ],
+        [
+          65.17022427196002,
+          65.18642352358695,
+          65.19456436459852,
+          65.19755887675464,
+          65.16139784056351
+        ],
+        [
+          67.22448980947864,
+          67.17082211662527,
+          67.17040136263955,
+          67.20022362796558,
+          67.19162774570913
+        ],
+        [
+          63.59271564198678,
+          63.57491651668834,
+          63.57700551950531,
+          62.315333452596896,
+          56.61517324813859
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.http.benchmarks.EndpointBenchmark.benchmarkDeepPathZioApi",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 284.90802109431405,
+      "scoreError" : 19.179644773655816,
+      "scoreConfidence" : [
+        265.72837632065824,
+        304.08766586796986
+      ],
+      "scorePercentiles" : {
+        "0.0" : 250.55577383268755,
+        "50.0" : 282.15671729200017,
+        "90.0" : 317.7859383423396,
+        "95.0" : 318.5555022257886,
+        "99.0" : 318.85594219262674,
+        "99.9" : 318.85594219262674,
+        "99.99" : 318.85594219262674,
+        "99.999" : 318.85594219262674,
+        "99.9999" : 318.85594219262674,
+        "100.0" : 318.85594219262674
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          272.2957425075328,
+          283.83910705969345,
+          285.69652072019517,
+          282.15671729200017,
+          278.6495153292464
+        ],
+        [
+          250.55577383268755,
+          253.4827430908597,
+          256.25391284745956,
+          261.1838123810623,
+          269.2800492020829
+        ],
+        [
+          306.82833640667803,
+          315.7583126773288,
+          315.8857401792054,
+          317.7402468128996,
+          316.5884605983039
+        ],
+        [
+          318.85594219262674,
+          317.85447563649956,
+          314.40994513146575,
+          307.970004598382,
+          300.95997713670124
+        ],
+        [
+          267.0832201055079,
+          258.63617720405074,
+          256.9567927153049,
+          256.8170705577035,
+          256.9619311423731
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.http.benchmarks.EndpointBenchmark.benchmarkDeepPathZioCollect",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 610.7218563456597,
+      "scoreError" : 32.20813314976131,
+      "scoreConfidence" : [
+        578.5137231958984,
+        642.9299894954211
+      ],
+      "scorePercentiles" : {
+        "0.0" : 463.36657549438934,
+        "50.0" : 628.2707178789841,
+        "90.0" : 644.1876770404846,
+        "95.0" : 649.794883628058,
+        "99.0" : 651.2041340765732,
+        "99.9" : 651.2041340765732,
+        "99.99" : 651.2041340765732,
+        "99.999" : 651.2041340765732,
+        "99.9999" : 651.2041340765732,
+        "100.0" : 651.2041340765732
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          620.8164374924154,
+          619.8124886856292,
+          620.5067819444373,
+          631.6150605206578,
+          629.2010623541101
+        ],
+        [
+          565.5069641977711,
+          584.7741395297683,
+          598.2915502580702,
+          600.1107025802548,
+          594.66897456296
+        ],
+        [
+          637.7670521645098,
+          632.7672691557037,
+          639.4412267433996,
+          636.4713185284322,
+          621.4319466558114
+        ],
+        [
+          638.4638901609646,
+          642.6417066797925,
+          646.5066325815227,
+          651.2041340765732,
+          638.1501019586726
+        ],
+        [
+          559.3041642890987,
+          530.3790227194717,
+          463.36657549438934,
+          628.2707178789841,
+          636.5764874280943
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.http.benchmarks.EndpointBenchmark.benchmarkSmallDataTapirHttp4s",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 79.21912767824695,
+      "scoreError" : 1.6656148695849633,
+      "scoreConfidence" : [
+        77.55351280866199,
+        80.8847425478319
+      ],
+      "scorePercentiles" : {
+        "0.0" : 74.7013686679007,
+        "50.0" : 78.5408636384842,
+        "90.0" : 82.7521502788928,
+        "95.0" : 83.47973309245833,
+        "99.0" : 83.61655834241267,
+        "99.9" : 83.61655834241267,
+        "99.99" : 83.61655834241267,
+        "99.999" : 83.61655834241267,
+        "99.9999" : 83.61655834241267,
+        "100.0" : 83.61655834241267
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          78.5408636384842,
+          81.19821397886679,
+          79.73258045018942,
+          80.4853814363252,
+          79.77477621294616
+        ],
+        [
+          74.7013686679007,
+          77.51323298147153,
+          77.55066614373267,
+          78.91876398380872,
+          79.40446980049722
+        ],
+        [
+          83.61655834241267,
+          82.47993434755587,
+          81.99488426386732,
+          83.16047417589819,
+          82.40294546473926
+        ],
+        [
+          77.32562724514528,
+          77.726323862739,
+          77.38571290988904,
+          77.29978019339109,
+          77.77496164993866
+        ],
+        [
+          79.88339058152357,
+          77.53578551373812,
+          78.15642941625417,
+          77.97581190314764,
+          77.93925479171115
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.http.benchmarks.EndpointBenchmark.benchmarkSmallDataZioApi",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 276.8753396429966,
+      "scoreError" : 17.68148579674153,
+      "scoreConfidence" : [
+        259.1938538462551,
+        294.55682543973813
+      ],
+      "scorePercentiles" : {
+        "0.0" : 245.36914053968553,
+        "50.0" : 287.23838736591,
+        "90.0" : 300.82837293068,
+        "95.0" : 304.4913823809355,
+        "99.0" : 305.7262537219738,
+        "99.9" : 305.7262537219738,
+        "99.99" : 305.7262537219738,
+        "99.999" : 305.7262537219738,
+        "99.9999" : 305.7262537219738,
+        "100.0" : 305.7262537219738
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          255.26461188724755,
+          287.23838736591,
+          286.945901700661,
+          291.98743641976444,
+          290.7992865234607
+        ],
+        [
+          299.6767416974975,
+          300.1548001154442,
+          298.6412522550549,
+          298.21227713102843,
+          305.7262537219738
+        ],
+        [
+          297.94295799112984,
+          297.5489740788933,
+          299.9307197528711,
+          300.3072776054582,
+          301.6100159185128
+        ],
+        [
+          258.0787373953199,
+          257.1746530740917,
+          254.68179474235166,
+          250.81133819194915,
+          251.9948478166984
+        ],
+        [
+          251.18173630404135,
+          245.36914053968553,
+          247.34115753862156,
+          246.38284700122855,
+          246.88034430602093
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  },
+  {
+    "jmhVersion" : "1.36",
+    "benchmark" : "zio.http.benchmarks.EndpointBenchmark.benchmarkSmallDataZioCollect",
+    "mode" : "thrpt",
+    "threads" : 1,
+    "forks" : 5,
+    "jvm" : "/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.1/Contents/Home/bin/java",
+    "jvmArgs" : [
+      "-XX:ThreadPriorityPolicy=1",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+EnableJVMCIProduct",
+      "-XX:JVMCIThreadsPerNativeLibraryRuntime=1",
+      "-XX:-UnlockExperimentalVMOptions",
+      "-Dio.netty.leakDetectionLevel=paranoid",
+      "-DZIOHttpLogLevel=INFO"
+    ],
+    "jdkVersion" : "11.0.18",
+    "vmName" : "OpenJDK 64-Bit Server VM",
+    "vmVersion" : "11.0.18+10-jvmci-22.3-b13",
+    "warmupIterations" : 5,
+    "warmupTime" : "10 s",
+    "warmupBatchSize" : 1,
+    "measurementIterations" : 5,
+    "measurementTime" : "10 s",
+    "measurementBatchSize" : 1,
+    "primaryMetric" : {
+      "score" : 746.3691085512849,
+      "scoreError" : 13.05124058257285,
+      "scoreConfidence" : [
+        733.317867968712,
+        759.4203491338577
+      ],
+      "scorePercentiles" : {
+        "0.0" : 723.0871442588748,
+        "50.0" : 741.5538442417748,
+        "90.0" : 769.7585697665646,
+        "95.0" : 777.6995494216195,
+        "99.0" : 779.5874000454322,
+        "99.9" : 779.5874000454322,
+        "99.99" : 779.5874000454322,
+        "99.999" : 779.5874000454322,
+        "99.9999" : 779.5874000454322,
+        "100.0" : 779.5874000454322
+      },
+      "scoreUnit" : "ops/s",
+      "rawData" : [
+        [
+          756.8409625109724,
+          756.778947972091,
+          756.6507938831013,
+          752.2913301079169,
+          741.5538442417748
+        ],
+        [
+          741.1964798246214,
+          740.1069122494815,
+          761.9853169614242,
+          758.8260264610392,
+          753.2524749847245
+        ],
+        [
+          726.5391048637637,
+          726.4363126868113,
+          728.6929175691292,
+          740.8660221377463,
+          723.4612758654963
+        ],
+        [
+          765.9201747338394,
+          767.4012398557921,
+          765.8100918862408,
+          773.2945646327232,
+          779.5874000454322
+        ],
+        [
+          733.7664940756035,
+          723.0871442588748,
+          724.9258577305153,
+          728.5554033023753,
+          731.4006209406297
+        ]
+      ]
+    },
+    "secondaryMetrics" : {
+    }
+  }
+]
+
+

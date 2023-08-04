@@ -47,7 +47,7 @@ jobs:
       - name: Build and run JMH benchmark
         run: |
           sbt clean compile 
-          sbt 'benchmarks/runBenchmarks'
+          sbt 'benchmarks/jmh:run -i 3 -wi 3 -f1 -t1 -rf json -rff output.json .*'
       - name: JMH Benchmark Action
         uses: kitlangton/jmh-benchmark-action@main
         with:
