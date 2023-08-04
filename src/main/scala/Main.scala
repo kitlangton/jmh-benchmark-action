@@ -6,7 +6,6 @@ import jmh.BenchmarkRun
 import zio.*
 import zio.json.{DecoderOps, EncoderOps}
 
-import scala.scalajs.js.JSON
 import scala.scalajs.js.JSON.stringify
 
 object Main extends ZIOAppDefault:
@@ -85,17 +84,16 @@ object Main extends ZIOAppDefault:
       commitLink: String
   ) =
     for
-      repository <-
-        ZIO.fromOption(GitHub.context.payload.repository.toOption).orElseFail(new Exception("missing repository"))
-      _      <- ZIO.debug(s"comment on pull request (${pullRequestNumber})\nfor repository: ${stringify(repository)}")
+      _      <- ZIO.debug(s"comment on pull request ($pullRequestNumber)")
+      _      <- ZIO.debug(s"Repo owner: ${GitHub.context.repo.owner} Repo: ${GitHub.context.repo.repo}")
       octokit = GitHub.getOctokit(config.githubToken)
       _ <- ZIO.fromFuture { _ =>
              val commitMarkdownLink = s"[`$commitMessage`]($commitLink)"
              octokit.rest.issues
                .createComment(
                  CreateCommentParams(
-                   owner = repository.owner.login,
-                   repo = repository.name,
+                   owner = GitHub.context.repo.owner,
+                   repo = GitHub.context.repo.repo,
                    issue_number = pullRequestNumber,
                    body = s"🤖 **Benchmark Comparison** for $commitMarkdownLink\n\n" + comparison.toMarkdownTable
                  )
