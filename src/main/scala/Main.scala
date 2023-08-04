@@ -102,7 +102,7 @@ object Main extends ZIOAppDefault:
 
   private def getPRCommitMessageAndLink(pullRequest: PullRequest): (String, String) =
     val prSha     = pullRequest.head.sha
-    val prRepoUrl = GitHub.context.payload.repository.get.html_url.get
+    val prRepoUrl = GitHub.context.payload.pull_request.get.head.repo.html_url
     val prBranch  = pullRequest.head.ref
     val repo      = GitHub.context.repo
     println(s"prSha: $prSha prRepoUrl: $prRepoUrl prBranch: $prBranch repo: ${scalajs.js.JSON.stringify(repo)}}")
@@ -125,8 +125,8 @@ object Main extends ZIOAppDefault:
            }
       repository <-
         ZIO.fromOption(GitHub.context.payload.repository.toOption).orElseFail(new Exception("missing repository"))
-      githubUrl <- ZIO.fromOption(repository.html_url.toOption).orElseFail(new Exception("missing html_url"))
-      _         <- ZIO.attempt(Git.push(token = config.githubToken, repoUrl = githubUrl, branch = benchmarkDataBranch))
+      _ <-
+        ZIO.attempt(Git.push(token = config.githubToken, repoUrl = repository.html_url, branch = benchmarkDataBranch))
     yield ()
 
   val run =

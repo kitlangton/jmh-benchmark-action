@@ -76,6 +76,7 @@ trait PullRequestHead extends js.Object:
   def label: String
   def ref: String
   def sha: String
+  def repo: PayloadRepository
 
 @js.native
 trait Sender extends js.Object:
@@ -96,9 +97,9 @@ trait Comment extends js.Object:
 @js.native
 trait PayloadRepository extends js.Object:
   def name: String
-  def full_name: js.UndefOr[String]
+  def full_name: String
   def owner: Owner
-  def html_url: js.UndefOr[String]
+  def html_url: String
 
 @js.native
 trait Owner extends js.Object:
