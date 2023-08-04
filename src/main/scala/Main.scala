@@ -108,7 +108,7 @@ object Main extends ZIOAppDefault:
     Git.fetch("pr_repo", prBranch)
     Git.checkout(prBranch, s"pr_repo/$prBranch")
     val message = Git.getCommitMessage(prSha)
-    val link    = s"${pullRequest._links.commits.href}/$prSha"
+    val link    = s"$prRepoUrl/pull/${pullRequest.number}/commits/$prSha"
     (message, link)
 
   private def updateBenchmarks(savedBenchmarks: SavedBenchmarks, benchmark: Benchmark, config: AppConfig) =
