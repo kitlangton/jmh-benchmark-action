@@ -28,22 +28,29 @@ object Main extends ZIOAppDefault:
     */
   private val program =
     for
-      config           <- AppConfig.parse
+      config           <- AppConfig.parse.debug("Parsed AppConfig")
       currentBenchmark <- readJmhBenchmark(config)
+      _                <- ZIO.debug("Read current benchmark data")
       _                <- ZIO.attempt { Git.addAll(); Git.resetHard() }
+      _                <- ZIO.debug("Reset git repo")
       _                <- checkoutBenchmarkDataBranch
+      _                <- ZIO.debug("Checked out benchmark data branch")
       savedBenchmarks  <- readSavedBenchmarks
+      _                <- ZIO.debug("Read saved benchmark data")
       comparison        = currentBenchmark.compare(savedBenchmarks.mostRecent)
 
       // When the event is a pull request, we want to comment on the PR with the benchmark comparison.
       _ <- ZIO.foreach(GitHub.context.payload.pull_request.toOption) { pullRequest =>
-             commentOnPullRequest(comparison, config, pullRequest)
+             ZIO.debug(s"Found pull request ${stringify(pullRequest)}") *>
+               commentOnPullRequest(comparison, config, pullRequest) *>
+               ZIO.debug("Commented on pull request")
            }
 
       // When the event is a push, indicating a PR has been merged, we want to update the saved benchmark data
       // to include the new benchmark data.
       _ <- updateBenchmarks(savedBenchmarks, currentBenchmark, config)
              .when(GitHub.context.eventName == "push")
+      _ <- ZIO.debug(s"Updated saved benchmark data when 'push' == ${GitHub.context.eventName}")
 
       _ <- ZIO.when(comparison.hasRegressed(config.failureThreshold)) {
              if config.failOnRegression then
