@@ -5,11 +5,13 @@ import git.Git
 import jmh.BenchmarkRun
 import zio.*
 import zio.json.{DecoderOps, EncoderOps}
-
+import scala.scalajs.js
 import scala.scalajs.js.JSON.stringify
+import js.Dynamic.global
 
 object Main extends ZIOAppDefault:
-
+  private val environment                    = global.process.env
+  private val githubStepSummaryFile          = environment.GITHUB_STEP_SUMMARY.toString
   private val benchmarkDataBranch: String    = "internal/benchmark-data"
   private val internalBenchmarksPath: String = ".internal-benchmarks.json"
 
@@ -40,12 +42,16 @@ object Main extends ZIOAppDefault:
       comparison        = currentBenchmark.compare(savedBenchmarks.mostRecent)
 
       // When the event is a pull request, we want to comment on the PR with the benchmark comparison.
-      _ <- Actions.addSummary(_.addHeading("Benchmark Comparison").addRaw(comparison.toMarkdownTable))
+      _ <- Actions.addSummary(_.addHeading("Benchmark Comparison", 2).addRaw(comparison.toMarkdownTable))
+      //
 //      _ <- ZIO.foreach(GitHub.context.payload.pull_request.toOption) { pullRequest =>
 //             ZIO.debug(s"Found pull request ${stringify(pullRequest)}") *>
 //               commentOnPullRequest(comparison, config, pullRequest) *>
 //               ZIO.debug("Commented on pull request")
 //           }
+      _ <- ZIO.attempt {
+             Files.appendFileSync(githubStepSummaryFile, "### Benchmark Comparison\n\n" + comparison.toMarkdownTable)
+           }
 
       // When the event is a push, indicating a PR has been merged, we want to update the saved benchmark data
       // to include the new benchmark data.

@@ -10,3 +10,5 @@ object Files extends js.Object:
 
   def writeFileSync(path: String, data: String, options: js.Object): Unit = js.native
   def writeFileSync(path: String, data: String): Unit                     = js.native
+  def appendFileSync(path: String, data: String): Unit                    = js.native
+  
