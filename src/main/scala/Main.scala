@@ -42,15 +42,13 @@ object Main extends ZIOAppDefault:
       comparison        = currentBenchmark.compare(savedBenchmarks.mostRecent)
 
       // When the event is a pull request, we want to comment on the PR with the benchmark comparison.
-      _ <- Actions.addSummary(_.addHeading("Benchmark Comparison", 2).addRaw(comparison.toMarkdownTable))
-      //
 //      _ <- ZIO.foreach(GitHub.context.payload.pull_request.toOption) { pullRequest =>
 //             ZIO.debug(s"Found pull request ${stringify(pullRequest)}") *>
 //               commentOnPullRequest(comparison, config, pullRequest) *>
 //               ZIO.debug("Commented on pull request")
 //           }
       _ <- ZIO.attempt {
-             Files.appendFileSync(githubStepSummaryFile, "### Benchmark Comparison\n\n" + comparison.toMarkdownTable)
+             Files.appendFileSync(githubStepSummaryFile, "## Benchmark Comparison\n\n" + comparison.toMarkdownTable)
            }
 
       // When the event is a push, indicating a PR has been merged, we want to update the saved benchmark data
