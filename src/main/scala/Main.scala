@@ -101,6 +101,9 @@ object Main extends ZIOAppDefault:
                              )
                              .toFuture
                          )
+                         .tap { payload =>
+                           ZIO.debug(s"Got commit message ${stringify(payload)}")
+                         }
                          .map(_.commit.message)
       link = s"${pullRequest.html_url}/pull/${pullRequest.number}/commits/${pullRequest.head.sha}"
       _ <- ZIO.fromFuture { _ =>
