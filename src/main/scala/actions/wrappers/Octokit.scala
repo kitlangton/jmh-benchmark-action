@@ -14,7 +14,7 @@ trait Rest extends js.Object:
 @js.native
 trait Repos extends js.Object:
   def createCommitComment(params: CreateCommitCommentParams): js.Promise[CreateCommitCommentResponse] = js.native
-  def getCommit(params: GetCommitParams): js.Promise[GetCommitResponse]                               = js.native
+  def getCommit(params: GetCommitParams): js.Promise[DataWrapper[GetCommitResponse]]                  = js.native
 
 @js.native
 trait GetCommitParams extends js.Object:
@@ -35,6 +35,10 @@ object GetCommitParams:
         ref = ref
       )
       .asInstanceOf[GetCommitParams]
+
+@js.native
+trait DataWrapper[A] extends js.Object:
+  def data: A
 
 @js.native
 trait GetCommitResponse extends js.Object:

@@ -104,7 +104,7 @@ object Main extends ZIOAppDefault:
                          .tap { payload =>
                            ZIO.debug(s"Got commit message ${stringify(payload)}")
                          }
-                         .map(_.commit.message)
+                         .map(_.data.commit.message)
       link = s"${pullRequest.html_url}/pull/${pullRequest.number}/commits/${pullRequest.head.sha}"
       _ <- ZIO.fromFuture { _ =>
              val commitMarkdownLink = s"[`${commitMessage.replace("\n", " ")}`]($link)"
