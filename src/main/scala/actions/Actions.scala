@@ -1,6 +1,6 @@
 package actions
 
-import actions.wrappers.InputOptions
+import actions.wrappers.{InputOptions, Summary}
 import zio.*
 
 trait Actions:
@@ -24,6 +24,8 @@ trait Actions:
 
   def setCommandEcho(enabled: Boolean): UIO[Unit]
 
+  def addSummary(f: Summary => Summary): Task[Unit]
+
 object Actions:
 
   def getInput(name: String, required: Boolean = false): ZIO[Actions, Nothing, Option[String]] =
@@ -43,6 +45,9 @@ object Actions:
 
   def debug(message: String): ZIO[Actions, Nothing, Unit] =
     ZIO.serviceWithZIO[Actions](_.debug(message))
+
+  def addSummary(f: Summary => Summary): ZIO[Actions, Throwable, Unit] =
+    ZIO.serviceWithZIO[Actions](_.addSummary(f))
 
   val live: ULayer[ActionsLive] =
     ZLayer.fromFunction(ActionsLive.apply _)
@@ -79,6 +84,9 @@ final case class ActionsLive() extends Actions:
   override def setCommandEcho(enabled: Boolean): UIO[Unit] =
     ZIO.succeed(wrappers.Core.setCommandEcho(enabled))
 
+  override def addSummary(f: Summary => Summary): Task[Unit] =
+    ZIO.fromFuture(_ => f(wrappers.Core.summary).write().toFuture).unit
+
 final case class TestActions(inputs: Map[String, String], outputs: Ref[Map[String, String]]) extends Actions:
   override def getInput(name: String, required: Boolean): UIO[Option[String]] =
     ZIO.succeed(inputs.get(name))
@@ -109,6 +117,9 @@ final case class TestActions(inputs: Map[String, String], outputs: Ref[Map[Strin
 
   override def setCommandEcho(enabled: Boolean): UIO[Unit] =
     ZIO.debug(s"setCommandEcho(enabled = $enabled)")
+
+  override def addSummary(f: Summary => Summary): Task[Unit] =
+    ZIO.debug(s"addSummary(f = $f)")
 
   // # Test Methods
 

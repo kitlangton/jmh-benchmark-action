@@ -26,6 +26,8 @@ object Core extends js.Object:
 
   def setCommandEcho(enabled: Boolean): Unit = js.native
 
+  def summary: Summary = js.native
+
 @js.native
 trait InputOptions extends js.Object:
   val required: Boolean = js.native
@@ -33,3 +35,9 @@ trait InputOptions extends js.Object:
 object InputOptions:
   def apply(required: Boolean): InputOptions =
     js.Dynamic.literal(required = required).asInstanceOf[InputOptions]
+
+@js.native
+trait Summary extends js.Object:
+  def addRaw(text: String, addEOL: Boolean = false): Summary = js.native
+  def addHeading(text: String, level: Int = 1): Summary      = js.native
+  def write(): js.Promise[Summary]                           = js.native
